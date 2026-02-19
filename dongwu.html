@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动物/化石类文物 - 无人深空博物馆</title>
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;font-family: "微软雅黑", sans-serif;}
+        body {background-color: #0f0f23;color: #ffffff;}
+        .header {background-color: #1a1a3a;padding: 20px;border-bottom: 3px solid #4cc9f0;display: flex;justify-content: space-between;align-items: center;}
+        .back-btn {background-color: #f72585;color: white;border: none;padding: 10px 20px;border-radius: 8px;font-size: 1rem;cursor: pointer;transition: background-color 0.3s ease;}
+        .back-btn:hover {background-color: #d61a70;}
+        .header h1 {font-size: 2rem;color: #4cc9f0;}
+        .artifact-container {padding: 40px 20px;max-width: 1200px;margin: 0 auto;}
+        .artifact-grid {display: grid;grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));gap: 25px;}
+        .artifact-card {background-color: #242448;border-radius: 12px;overflow: hidden;box-shadow: 0 6px 12px rgba(0,0,0,0.3);transition: transform 0.3s ease;cursor: pointer;}
+        .artifact-card:hover {transform: scale(1.05);}
+        .artifact-img {width: 100%;height: 180px;object-fit: cover;border-bottom: 3px solid #f72585;}
+        .artifact-name {padding: 15px;text-align: center;font-size: 1.1rem;color: #e0e0e0;}
+        .modal {display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.9);z-index: 999;justify-content: center;align-items: center;}
+        .modal-img {max-width: 90%;max-height: 90%;border: 5px solid #4cc9f0;border-radius: 10px;}
+        .close-btn {position: absolute;top: 20px;right: 30px;color: white;font-size: 2.5rem;cursor: pointer;}
+        @media (max-width: 768px) {
+            .header h1 {font-size: 1.5rem;}
+            .artifact-grid {grid-template-columns: 1fr;}
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="window.location.href='index.html'">← 返回首页</button>
+        <h1>🐾 动物/化石类文物展厅</h1>
+        <div></div>
+    </div>
+    <div class="artifact-container">
+        <div class="artifact-grid">
+            <div class="artifact-card" onclick="openModal('dw_07_haigu_dehuiyi_62.png')">
+                <img src="dw_07_haigu_dehuiyi_62.png" alt="骸骨的回忆" class="artifact-img">
+                <div class="artifact-name">骸骨的回忆（阿特拉斯碎片）</div>
+            </div>
+            <div class="artifact-card" onclick="openModal('dw_18_yangben.png')">
+                <img src="dw_18_yangben.png" alt="远古生物样本" class="artifact-img">
+                <div class="artifact-name">远古生物样本</div>
+            </div>
+            <div class="artifact-card" onclick="openModal('dw_13_dongwu13.jpg')">
+                <img src="dw_13_dongwu13.jpg" alt="动物文物13" class="artifact-img">
+                <div class="artifact-name">动物文物13</div>
+            </div>
+            <div class="artifact-card" onclick="openModal('dw_19_dongwu19.jpg')">
+                <img src="dw_19_dongwu19.jpg" alt="动物文物19" class="artifact-img">
+                <div class="artifact-name">动物文物19</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="imgModal" onclick="closeModal()">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img src="" alt="文物大图" class="modal-img" id="modalImg">
+    </div>
+    <script>
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imgModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+        }
+        function closeModal() {
+            const modal = document.getElementById('imgModal');
+            modal.style.display = 'none';
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('imgModal');
+            if (event.target === modal) {closeModal();}
+        }
+    </script>
+</body>
+</html>
