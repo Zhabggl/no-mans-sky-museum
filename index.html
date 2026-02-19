@@ -12,11 +12,19 @@
         .header p {font-size: 1.2rem;color: #e0e0e0;}
         .zb-container {width: 100%;padding: 40px 20px;background: linear-gradient(#1a1a3a, #0f0f23);}
         .zb-title {text-align: center;font-size: 2.5rem;color: #f72585;margin-bottom: 30px;text-shadow: 0 0 10px #f72585;}
-        .zb-card {max-width: 800px;margin: 0 auto;background-color: #242448;border-radius: 20px;overflow: hidden;box-shadow: 0 0 30px rgba(76, 201, 240, 0.5);}
-        .zb-img {width: 100%;height: 450px;object-fit: cover;border-bottom: 5px solid #f72585;}
+        /* 新增镇馆之宝网格样式 */
+        .zb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .zb-card {max-width: 100%;background-color: #242448;border-radius: 20px;overflow: hidden;box-shadow: 0 0 30px rgba(76, 201, 240, 0.5);}
+        .zb-img {width: 100%;height: 250px;object-fit: cover;border-bottom: 5px solid #f72585;}
         .zb-info {padding: 25px;text-align: center;}
-        .zb-name {font-size: 2rem;color: #4cc9f0;margin-bottom: 15px;}
-        .zb-desc {font-size: 1.1rem;line-height: 1.6;color: #e0e0e0;}
+        .zb-name {font-size: 1.5rem;color: #4cc9f0;margin-bottom: 15px;}
+        .zb-desc {font-size: 1rem;line-height: 1.6;color: #e0e0e0;}
         .category-container {padding: 40px 20px;max-width: 1200px;margin: 0 auto;}
         .category-title {text-align: center;font-size: 2.2rem;color: #4cc9f0;margin-bottom: 40px;border-bottom: 2px solid #f72585;padding-bottom: 10px;}
         .category-grid {display: grid;grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));gap: 30px;}
@@ -30,8 +38,8 @@
             .header h1 {font-size: 2rem;}
             .zb-title {font-size: 2rem;}
             .zb-card {max-width: 100%;}
-            .zb-img {height: 280px;}
-            .zb-name {font-size: 1.5rem;}
+            .zb-img {height: 200px;}
+            .zb-name {font-size: 1.2rem;}
             .category-grid {grid-template-columns: 1fr;}
         }
     </style>
@@ -41,19 +49,104 @@
         <h1>无人深空文物电子博物馆</h1>
         <p>收藏宇宙中最珍贵的星际文物</p>
     </div>
+
+    <!-- 镇馆之宝 - 10个完整展示 -->
     <div class="zb-container">
-        <h2 class="zb-title">🏆 镇馆之宝 · 骸骨的回忆</h2>
-        <div class="zb-card">
-            <img src="dw_07_haigu_dehuiyi_62.png" alt="骸骨的回忆" class="zb-img">
-            <div class="zb-info">
-                <div class="zb-name">骸骨的回忆（阿特拉斯碎片）</div>
-                <div class="zb-desc">
-                    这份回忆是宇宙的一块碎片，是有可能的过去与潜在的未来构成的无尽宇宙中的一隅。<br>
-                    飞向群星并使用🅴唤醒这份回忆，价值1600货币，可在交易终端处出售。
+        <h2 class="zb-title">🏆 镇馆之宝</h2>
+        <div class="zb-grid">
+            <div class="zb-card">
+                <img src="zb01_yuhuolinger.jpg" alt="诱惑-长者 鳞茎" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">诱惑-长者 鳞茎</div>
+                    <div class="zb-desc">
+                        距今约2879年，是宇宙中罕见的远古突变植物，隶属于“易碎的植物群系”顶级品类，仅生长于被阿特拉斯能量辐射过的废弃星球。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb02_zhenxifeie.png" alt="珍稀的飞蛾" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">珍稀的飞蛾</div>
+                    <div class="zb-desc">
+                        距今约1982年，是生物样本类中的顶级珍品，记录了早期星际生态的关键信息。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb03_shougongfaling.jpg" alt="手工制作的法令" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">手工制作的法令</div>
+                    <div class="zb-desc">
+                        距今约1835年，是历史文献类中的顶级瑰宝，记录了科尔瓦克斯文明的重要法令。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb04_yuanhuabaocang.png" alt="圆滑的宝藏" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">圆滑的宝藏</div>
+                    <div class="zb-desc">
+                        距今约1591年，是地下宝藏类中的传奇展品，蕴含着未知的星际财富。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb05_shenmixinbiao.jpg" alt="神秘信标" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">神秘信标</div>
+                    <div class="zb-desc">
+                        银河顶级阿特拉斯关联技术造物，可用于定位宇宙中的关键坐标。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb06_xialiuyanjiu.png" alt="下流的研究数据" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">下流的研究数据</div>
+                    <div class="zb-desc">
+                        距今约1569年，是一份充满秘密与禁忌的古老文献，记录了被禁止的研究。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb07_jianghuahangxing.jpg" alt="僵化的恒星" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">僵化的恒星</div>
+                    <div class="zb-desc">
+                        特殊物品类中的顶级奇观，见证了恒星演化的极端状态。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb08_zuichuwaiguge.png" alt="最初的动物外骨骼" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">最初的动物外骨骼</div>
+                    <div class="zb-desc">
+                        距今约1619年，是化石类展品中的核心瑰宝，记录了早期生命的形态。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb09_chelunguang.jpg" alt="夺目焊接工的车轮光" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">夺目焊接工的车轮光</div>
+                    <div class="zb-desc">
+                        距今约2896年，是失落的遗物类中的传奇展品，蕴含着未知的能量。
+                    </div>
+                </div>
+            </div>
+            <div class="zb-card">
+                <img src="zb10_liliangzhizhong.png" alt="力量之种" class="zb-img">
+                <div class="zb-info">
+                    <div class="zb-name">力量之种</div>
+                    <div class="zb-desc">
+                        特殊物品类中的核心瑰宝，被认为是宇宙生命力量的源泉。
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="category-container">
         <h2 class="category-title">🌌 文物分类展厅</h2>
         <div class="category-grid">
